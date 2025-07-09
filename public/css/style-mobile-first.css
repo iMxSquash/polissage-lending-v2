@@ -1729,15 +1729,23 @@ header {
 }
 
 .bg-opacity-10 {
-    background-color: rgba(var(--tw-bg-opacity), 0.1);
+    background-color: rgba(254, 231, 21, 0.1);
+    /* primary color with 10% opacity */
 }
 
 .bg-opacity-50 {
-    background-color: rgba(var(--tw-bg-opacity), 0.5);
+    background-color: rgba(254, 231, 21, 0.5);
+    /* primary color with 50% opacity */
 }
 
 .bg-opacity-100 {
-    background-color: rgba(var(--tw-bg-opacity), 1);
+    background-color: rgba(254, 231, 21, 1);
+    /* primary color with 100% opacity */
+}
+
+.hover\\:bg-opacity-10:hover {
+    background-color: rgba(254, 231, 21, 0.1);
+    /* primary color with 10% opacity on hover */
 }
 
 .text-gray-600 {
@@ -1843,10 +1851,6 @@ header {
 
 .mr-1 {
     margin-right: 0.25rem;
-}
-
-.mr-2 {
-    margin-right: 0.5rem;
 }
 
 .mt-auto {
@@ -2662,6 +2666,10 @@ header {
 
 .gap-5 {
     gap: 1.25rem;
+}
+
+.gap-8 {
+    gap: 2rem;
 }
 
 .gap-10 {
