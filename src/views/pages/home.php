@@ -87,26 +87,34 @@
                         </p>
                     </div>
 
-                    <div class="carousel-container" id="formationsCarousel">
-                        <div class="carousel-track">
-                            <?php if (!empty($courses)): ?>
-                                <?php foreach ($courses as $index => $course): ?>
+                    <div class="carousel-container" id="formationsCarousel" data-autoplay="true" data-delay="4000">
+                        <div class="carousel-track-container">
+                            <div class="carousel-track">
+                                <?php if (!empty($courses)): ?>
+                                    <?php foreach ($courses as $index => $course): ?>
+                                        <div class="carousel-item">
+                                            <div class="carousel-card-container">
+                                                <?php
+                                                $isFeatured = $index === 0;
+                                                include SRC_PATH . '/views/components/formation-card.php';
+                                                ?>
+                                            </div>
+                                        </div>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
                                     <div class="carousel-item">
-                                        <?php
-                                        $isFeatured = $index === 0;
-                                        include SRC_PATH . '/views/components/formation-card.php';
-                                        ?>
+                                        <div class="carousel-card-container">
+                                            <div class="no-content">Aucune formation disponible</div>
+                                        </div>
                                     </div>
-                                <?php endforeach; ?>
-                            <?php else: ?>
-                                <div class="carousel-item">
-                                    <div class="no-content">Aucune formation disponible</div>
-                                </div>
-                            <?php endif; ?>
+                                <?php endif; ?>
+                            </div>
                         </div>
-                        <div class="carousel-dots"></div>
-                        <div class="carousel-progress">
-                            <div class="carousel-progress-bar"></div>
+                        <div class="carousel-controls">
+                            <div class="carousel-dots"></div>
+                            <div class="carousel-progress">
+                                <div class="carousel-progress-bar"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -151,26 +159,34 @@
                         </p>
                     </div>
 
-                    <div class="carousel-container" id="reviewsCarousel">
-                        <div class="carousel-track">
-                            <?php if (!empty($reviews)): ?>
-                                <?php foreach ($reviews as $index => $review): ?>
+                    <div class="carousel-container" id="reviewsCarousel" data-autoplay="true" data-delay="5000">
+                        <div class="carousel-track-container">
+                            <div class="carousel-track">
+                                <?php if (!empty($reviews)): ?>
+                                    <?php foreach ($reviews as $index => $review): ?>
+                                        <div class="carousel-item">
+                                            <div class="carousel-card-container">
+                                                <?php
+                                                $isFeatured = $index === 0;
+                                                include SRC_PATH . '/views/components/google-review-card.php';
+                                                ?>
+                                            </div>
+                                        </div>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
                                     <div class="carousel-item">
-                                        <?php
-                                        $isFeatured = $index === 0;
-                                        include SRC_PATH . '/views/components/google-review-card.php';
-                                        ?>
+                                        <div class="carousel-card-container">
+                                            <div class="no-content">Aucun avis disponible</div>
+                                        </div>
                                     </div>
-                                <?php endforeach; ?>
-                            <?php else: ?>
-                                <div class="carousel-item">
-                                    <div class="no-content">Aucun avis disponible</div>
-                                </div>
-                            <?php endif; ?>
+                                <?php endif; ?>
+                            </div>
                         </div>
-                        <div class="carousel-dots"></div>
-                        <div class="carousel-progress">
-                            <div class="carousel-progress-bar"></div>
+                        <div class="carousel-controls">
+                            <div class="carousel-dots"></div>
+                            <div class="carousel-progress">
+                                <div class="carousel-progress-bar"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -186,33 +202,41 @@
                         </p>
                     </div>
 
-                    <div class="carousel-container" id="galleryCarousel">
-                        <div class="carousel-track">
-                            <?php if (!empty($gallery)): ?>
-                                <?php foreach ($gallery as $item): ?>
-                                    <div class="carousel-item">
-                                        <div class="gallery-item">
-                                            <div class="gallery-image-wrapper">
-                                                <img src="<?php echo htmlspecialchars($item['imageUrl']); ?>"
-                                                    alt="<?php echo htmlspecialchars($item['title']); ?>"
-                                                    class="gallery-image">
-                                                <div class="gallery-overlay">
-                                                    <h3 class="gallery-title"><?php echo htmlspecialchars($item['title']); ?></h3>
-                                                    <p class="gallery-description"><?php echo htmlspecialchars($item['description']); ?></p>
+                    <div class="carousel-container" id="galleryCarousel" data-autoplay="true" data-delay="3500">
+                        <div class="carousel-track-container">
+                            <div class="carousel-track">
+                                <?php if (!empty($gallery)): ?>
+                                    <?php foreach ($gallery as $item): ?>
+                                        <div class="carousel-item">
+                                            <div class="carousel-card-container">
+                                                <div class="gallery-item">
+                                                    <div class="gallery-image-wrapper">
+                                                        <img src="<?php echo htmlspecialchars($item['imageUrl']); ?>"
+                                                            alt="<?php echo htmlspecialchars($item['title']); ?>"
+                                                            class="gallery-image">
+                                                        <div class="gallery-overlay">
+                                                            <h3 class="gallery-title"><?php echo htmlspecialchars($item['title']); ?></h3>
+                                                            <p class="gallery-description"><?php echo htmlspecialchars($item['description']); ?></p>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <div class="carousel-item">
+                                        <div class="carousel-card-container">
+                                            <div class="no-content">Aucune image disponible</div>
+                                        </div>
                                     </div>
-                                <?php endforeach; ?>
-                            <?php else: ?>
-                                <div class="carousel-item">
-                                    <div class="no-content">Aucune image disponible</div>
-                                </div>
-                            <?php endif; ?>
+                                <?php endif; ?>
+                            </div>
                         </div>
-                        <div class="carousel-dots"></div>
-                        <div class="carousel-progress">
-                            <div class="carousel-progress-bar"></div>
+                        <div class="carousel-controls">
+                            <div class="carousel-dots"></div>
+                            <div class="carousel-progress">
+                                <div class="carousel-progress-bar"></div>
+                            </div>
                         </div>
                     </div>
                 </div>

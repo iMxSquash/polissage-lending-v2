@@ -155,19 +155,20 @@ class App {
         }
     }
 
-    // Carousel Management
+    // Carousel Management - React compatible
     initCarousels() {
-        this.carousels = {
-            formations: this.createCarousel('formationsCarousel', { autoplay: true, delay: 4000 }),
-            reviews: this.createCarousel('reviewsCarousel', { autoplay: true, delay: 5000 }),
-            gallery: this.createCarousel('galleryCarousel', { autoplay: true, delay: 3500 })
-        };
+        const carouselContainers = document.querySelectorAll('.carousel-container');
+        this.carousels = [];
+
+        carouselContainers.forEach((container, index) => {
+            const carousel = this.createCarousel(container);
+            if (carousel) {
+                this.carousels.push(carousel);
+            }
+        });
     }
 
-    createCarousel(containerId, options = {}) {
-        const container = document.getElementById(containerId);
-        if (!container) return null;
-
+    createCarousel(container) {
         const track = container.querySelector('.carousel-track');
         const items = container.querySelectorAll('.carousel-item');
         const dotsContainer = container.querySelector('.carousel-dots');
@@ -179,83 +180,150 @@ class App {
             container,
             track,
             items: Array.from(items),
+            dotsContainer,
+            progressBar,
             currentIndex: 0,
-            itemsPerView: this.getItemsPerView(),
             autoplayInterval: null,
+            progressInterval: null,
             isHovered: false,
-            ...options
+            isDragging: false,
+            autoplay: container.dataset.autoplay === 'true',
+            delay: parseInt(container.dataset.delay) || 3000,
+            touchStartX: 0,
+            touchEndX: 0
         };
 
+        // Initialize responsive behavior
+        this.updateCarouselLayout(carousel);
+
         // Create dots
-        if (dotsContainer) {
-            this.createDots(carousel, dotsContainer);
-        }
+        this.createDots(carousel);
 
         // Setup autoplay
         if (carousel.autoplay) {
-            this.setupAutoplay(carousel, progressBar);
+            this.setupAutoplay(carousel);
         }
 
-        // Setup touch/mouse events
+        // Setup events
         this.setupCarouselEvents(carousel);
 
         // Update on resize
-        window.addEventListener('resize', () => {
-            carousel.itemsPerView = this.getItemsPerView();
+        const resizeHandler = () => {
+            this.updateCarouselLayout(carousel);
             this.updateCarousel(carousel);
-        });
+        };
+        window.addEventListener('resize', resizeHandler);
 
         return carousel;
     }
 
     getItemsPerView() {
-        if (window.innerWidth >= 1024) return 3;
-        if (window.innerWidth >= 768) return 2;
-        return 1;
+        if (window.innerWidth >= 1024) return 3; // desktop
+        if (window.innerWidth >= 768) return 2;  // tablet
+        return 1; // mobile
     }
 
-    createDots(carousel, dotsContainer) {
-        const totalSlides = Math.ceil(carousel.items.length / carousel.itemsPerView);
+    updateCarouselLayout(carousel) {
+        carousel.itemsPerView = this.getItemsPerView();
+        carousel.totalSlides = Math.max(1, carousel.items.length - carousel.itemsPerView + 1);
 
-        dotsContainer.innerHTML = '';
+        // Update item widths
+        const itemWidth = 100 / carousel.itemsPerView;
+        carousel.items.forEach(item => {
+            item.style.width = `${itemWidth}%`;
+        });
 
-        for (let i = 0; i < totalSlides; i++) {
+        // Adjust current index if necessary
+        if (carousel.currentIndex >= carousel.totalSlides) {
+            carousel.currentIndex = carousel.totalSlides - 1;
+        }
+    }
+
+    createDots(carousel) {
+        if (!carousel.dotsContainer) return;
+
+        carousel.dotsContainer.innerHTML = '';
+
+        for (let i = 0; i < carousel.totalSlides; i++) {
             const dot = document.createElement('button');
             dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
             dot.setAttribute('aria-label', `Aller au slide ${i + 1}`);
             dot.addEventListener('click', () => this.goToSlide(carousel, i));
-            dotsContainer.appendChild(dot);
+            carousel.dotsContainer.appendChild(dot);
         }
 
-        carousel.dots = dotsContainer.querySelectorAll('.carousel-dot');
+        carousel.dots = carousel.dotsContainer.querySelectorAll('.carousel-dot');
     }
 
-    setupAutoplay(carousel, progressBar) {
+    goToSlide(carousel, index) {
+        const safeIndex = Math.max(0, Math.min(index, carousel.totalSlides - 1));
+        carousel.currentIndex = safeIndex;
+        this.updateCarousel(carousel);
+    }
+
+    goToPrevious(carousel) {
+        carousel.currentIndex = carousel.currentIndex <= 0
+            ? carousel.totalSlides - 1
+            : carousel.currentIndex - 1;
+        this.updateCarousel(carousel);
+    }
+
+    goToNext(carousel) {
+        carousel.currentIndex = carousel.currentIndex >= carousel.totalSlides - 1
+            ? 0
+            : carousel.currentIndex + 1;
+        this.updateCarousel(carousel);
+    }
+
+    updateCarousel(carousel) {
+        // Update transform
+        const translateX = -(carousel.currentIndex * (100 / carousel.itemsPerView));
+        carousel.track.style.transform = `translateX(${translateX}%)`;
+
+        // Update dots
+        if (carousel.dots) {
+            carousel.dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === carousel.currentIndex);
+            });
+        }
+
+        // Update item visibility states (for animations)
+        carousel.items.forEach((item, index) => {
+            const isVisible = index >= carousel.currentIndex &&
+                index < carousel.currentIndex + carousel.itemsPerView;
+
+            item.style.opacity = isVisible ? '1' : '0.7';
+            item.style.transform = isVisible ? 'scale(1)' : 'scale(0.95)';
+        });
+    }
+
+    setupAutoplay(carousel) {
         const startAutoplay = () => {
-            if (carousel.autoplayInterval) return;
+            if (carousel.autoplayInterval || carousel.totalSlides <= 1) return;
 
             let progress = 0;
             const updateInterval = 50;
-            const totalTime = carousel.delay;
-            const increment = (100 / totalTime) * updateInterval;
+            const increment = (100 / carousel.delay) * updateInterval;
 
-            carousel.autoplayInterval = setInterval(() => {
-                if (carousel.isHovered) return;
+            carousel.progressInterval = setInterval(() => {
+                if (carousel.isHovered || carousel.isDragging) return;
 
                 progress += increment;
 
-                if (progressBar) {
-                    progressBar.style.width = `${progress}%`;
+                if (carousel.progressBar) {
+                    carousel.progressBar.style.width = `${progress}%`;
                 }
 
                 if (progress >= 100) {
                     progress = 0;
-                    this.nextSlide(carousel);
-                    if (progressBar) {
-                        progressBar.style.width = '0%';
+                    this.goToNext(carousel);
+                    if (carousel.progressBar) {
+                        carousel.progressBar.style.width = '0%';
                     }
                 }
             }, updateInterval);
+
+            carousel.autoplayInterval = carousel.progressInterval;
         };
 
         const stopAutoplay = () => {
@@ -263,8 +331,12 @@ class App {
                 clearInterval(carousel.autoplayInterval);
                 carousel.autoplayInterval = null;
             }
-            if (progressBar) {
-                progressBar.style.width = '0%';
+            if (carousel.progressInterval) {
+                clearInterval(carousel.progressInterval);
+                carousel.progressInterval = null;
+            }
+            if (carousel.progressBar) {
+                carousel.progressBar.style.width = '0%';
             }
         };
 
@@ -279,103 +351,95 @@ class App {
             startAutoplay();
         });
 
+        // Start autoplay
         startAutoplay();
     }
 
     setupCarouselEvents(carousel) {
-        let startX = 0;
-        let currentX = 0;
-        let isDragging = false;
+        // Touch events for mobile swipe
+        carousel.track.addEventListener('touchstart', (e) => {
+            carousel.touchStartX = e.touches[0].clientX;
+            carousel.isDragging = true;
+        }, { passive: true });
 
-        const handleStart = (e) => {
-            isDragging = true;
-            startX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
-            carousel.track.style.cursor = 'grabbing';
-        };
-
-        const handleMove = (e) => {
-            if (!isDragging) return;
+        carousel.track.addEventListener('touchmove', (e) => {
+            if (!carousel.isDragging) return;
             e.preventDefault();
-            currentX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
-        };
+        }, { passive: false });
 
-        const handleEnd = () => {
-            if (!isDragging) return;
-            isDragging = false;
-            carousel.track.style.cursor = '';
+        carousel.track.addEventListener('touchend', (e) => {
+            if (!carousel.isDragging) return;
 
-            const deltaX = currentX - startX;
-            const threshold = 50;
+            carousel.touchEndX = e.changedTouches[0].clientX;
+            carousel.isDragging = false;
 
-            if (Math.abs(deltaX) > threshold) {
-                if (deltaX > 0) {
-                    this.previousSlide(carousel);
-                } else {
-                    this.nextSlide(carousel);
+            const swipeDistance = carousel.touchStartX - carousel.touchEndX;
+            const minSwipeDistance = 50;
+
+            if (Math.abs(swipeDistance) > minSwipeDistance) {
+                if (swipeDistance > 0 && carousel.currentIndex < carousel.totalSlides - 1) {
+                    this.goToNext(carousel);
+                } else if (swipeDistance < 0 && carousel.currentIndex > 0) {
+                    this.goToPrevious(carousel);
                 }
             }
-        };
+        }, { passive: true });
 
-        // Mouse events
-        carousel.track.addEventListener('mousedown', handleStart);
-        document.addEventListener('mousemove', handleMove);
-        document.addEventListener('mouseup', handleEnd);
+        // Mouse drag events for desktop
+        let isDragging = false;
+        let startX = 0;
+        let scrollLeft = 0;
 
-        // Touch events
-        carousel.track.addEventListener('touchstart', handleStart, { passive: true });
-        carousel.track.addEventListener('touchmove', handleMove, { passive: false });
-        carousel.track.addEventListener('touchend', handleEnd, { passive: true });
-
-        // Wheel events
-        carousel.track.addEventListener('wheel', (e) => {
+        carousel.track.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            carousel.isDragging = true;
+            startX = e.pageX - carousel.track.offsetLeft;
+            carousel.track.style.cursor = 'grabbing';
             e.preventDefault();
-            if (e.deltaY > 0) {
-                this.nextSlide(carousel);
-            } else {
-                this.previousSlide(carousel);
+        });
+
+        carousel.track.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - carousel.track.offsetLeft;
+            const walk = (x - startX);
+            // Visual feedback during drag could be added here
+        });
+
+        carousel.track.addEventListener('mouseup', (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+            carousel.isDragging = false;
+            carousel.track.style.cursor = 'grab';
+
+            const endX = e.pageX - carousel.track.offsetLeft;
+            const distance = startX - endX;
+            const minDistance = 50;
+
+            if (Math.abs(distance) > minDistance) {
+                if (distance > 0 && carousel.currentIndex < carousel.totalSlides - 1) {
+                    this.goToNext(carousel);
+                } else if (distance < 0 && carousel.currentIndex > 0) {
+                    this.goToPrevious(carousel);
+                }
             }
+        });
+
+        carousel.track.addEventListener('mouseleave', () => {
+            if (isDragging) {
+                isDragging = false;
+                carousel.isDragging = false;
+                carousel.track.style.cursor = 'grab';
+            }
+        });
+
+        // Prevent context menu on long press
+        carousel.track.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
         });
     }
 
-    updateCarousel(carousel) {
-        const totalSlides = Math.ceil(carousel.items.length / carousel.itemsPerView);
-
-        // Ensure current index is valid
-        if (carousel.currentIndex >= totalSlides) {
-            carousel.currentIndex = totalSlides - 1;
-        }
-
-        // Update transform
-        const translateX = -(carousel.currentIndex * (100 / carousel.itemsPerView));
-        carousel.track.style.transform = `translateX(${translateX}%)`;
-
-        // Update dots
-        if (carousel.dots) {
-            carousel.dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === carousel.currentIndex);
-            });
-        }
-    }
-
-    goToSlide(carousel, index) {
-        const totalSlides = Math.ceil(carousel.items.length / carousel.itemsPerView);
-        carousel.currentIndex = Math.max(0, Math.min(index, totalSlides - 1));
-        this.updateCarousel(carousel);
-    }
-
-    nextSlide(carousel) {
-        const totalSlides = Math.ceil(carousel.items.length / carousel.itemsPerView);
-        carousel.currentIndex = (carousel.currentIndex + 1) % totalSlides;
-        this.updateCarousel(carousel);
-    }
-
-    previousSlide(carousel) {
-        const totalSlides = Math.ceil(carousel.items.length / carousel.itemsPerView);
-        carousel.currentIndex = carousel.currentIndex === 0 ? totalSlides - 1 : carousel.currentIndex - 1;
-        this.updateCarousel(carousel);
-    }
-
-    // Animations
+    // Animation Management
     initAnimations() {
         this.animateStats();
         this.observeElements();
