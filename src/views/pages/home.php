@@ -34,11 +34,13 @@
                             De débutant à professionnel en quelques semaines.
                         </p>
                         <div class="hero-buttons">
-                            <button class="btn btn-primary-large" onclick="scrollToSection('formations')">
+                            <button class="btn-hero-primary" onclick="scrollToSection('formations')">
                                 Voir les formations
-                                <i class="fas fa-arrow-right ml-2"></i>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m9 18 6-6-6-6" />
+                                </svg>
                             </button>
-                            <button class="btn btn-outline-large" onclick="scrollToSection('contact')">
+                            <button class="btn-hero-outline" onclick="scrollToSection('contact')">
                                 Contactez-nous
                             </button>
                         </div>
