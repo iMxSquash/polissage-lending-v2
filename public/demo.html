@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polissage Lending v2</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Polissage Lending v2 - Demo</h1>
+        <p>Professional car detailing training platform</p>
+
+        <div class="demo-section">
+            <h2>Test Python API</h2>
+            <button onclick="testPythonAPI()">Test API Connection</button>
+            <div id="api-result"></div>
+        </div>
+
+        <div class="demo-section">
+            <h2>Sample Courses</h2>
+            <div id="courses-list"></div>
+        </div>
+    </div>
+
+    <script>
+        async function testPythonAPI() {
+            const resultDiv = document.getElementById('api-result');
+            resultDiv.innerHTML = 'Testing API...';
+
+            try {
+                const response = await fetch('/api/health');
+                const data = await response.json();
+                resultDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+            } catch (error) {
+                resultDiv.innerHTML = `Error: ${error.message}`;
+            }
+        }
+
+        async function loadCourses() {
+            try {
+                const response = await fetch('/');
+                // For demo purposes, just show that the page loads
+                document.getElementById('courses-list').innerHTML = 'PHP service running ✓';
+            } catch (error) {
+                document.getElementById('courses-list').innerHTML = `Error: ${error.message}`;
+            }
+        }
+
+        // Load demo content
+        document.addEventListener('DOMContentLoaded', loadCourses);
+    </script>
+</body>
+
+</html>

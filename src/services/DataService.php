@@ -16,22 +16,44 @@ class DataService
     {
         return Review::getAll();
     }
-
-    public function processDataWithPython($data, $script)
+    public function processDataWithPython($data, $endpoint)
     {
-        $config = include SRC_PATH . '/config/config.php';
-        $pythonPath = $config['paths']['python_executable'];
-        $scriptPath = $config['paths']['python_scripts'] . '/' . $script;
+        $pythonApiUrl = $_ENV['PYTHON_API_URL'] ?? 'http://localhost:10000';
+        $url = $pythonApiUrl . '/process/' . $endpoint;
 
         $jsonData = json_encode($data);
-        $tempFile = tempnam(sys_get_temp_dir(), 'data_');
-        file_put_contents($tempFile, $jsonData);
 
-        $command = "{$pythonPath} {$scriptPath} {$tempFile}";
-        $output = shell_exec($command);
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'Content-Type: application/json',
+            'Content-Length: ' . strlen($jsonData)
+        ]);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 
-        unlink($tempFile);
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
 
-        return json_decode($output, true);
+        if ($httpCode !== 200) {
+            return ['error' => 'Python API request failed'];
+        }
+
+        return json_decode($response, true);
+    }
+
+    public function getProcessedReviews()
+    {
+        $reviews = $this->getReviews();
+        return $this->processDataWithPython(['reviews' => $reviews], 'reviews');
+    }
+
+    public function getProcessedCourses()
+    {
+        $courses = $this->getCourses();
+        return $this->processDataWithPython(['courses' => $courses], 'courses');
     }
 }
