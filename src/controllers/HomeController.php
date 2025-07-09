@@ -20,11 +20,15 @@ class HomeController
     {
         $courses = $this->dataService->getCourses();
         $reviews = $this->dataService->getReviews();
+        $articles = $this->dataService->getArticles();
+        $gallery = $this->dataService->getGallery();
 
         $this->viewRenderer->render('pages/home', [
-            'title' => 'Polissage Lending - Formation Detailing',
+            'title' => 'Formation Polissage Automobile - Experts Certifiés',
             'courses' => $courses,
-            'reviews' => $reviews
+            'reviews' => $reviews,
+            'articles' => $articles,
+            'gallery' => $gallery
         ]);
     }
 }
