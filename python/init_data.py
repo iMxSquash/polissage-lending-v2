@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 def create_sample_data():
     """Create sample data files for development - matching DataService.php structure"""
     
-    # Sample courses data - matching exact structure from DataService.php
+    # Sample courses data
     courses = [
         {
             "id": "1",
@@ -55,7 +55,7 @@ def create_sample_data():
         }
     ]
     
-    # Sample reviews data - matching exact structure from DataService.php
+    # Sample reviews data
     reviews = [
         {
             "id": "1",
@@ -95,7 +95,7 @@ def create_sample_data():
         }
     ]
     
-    # Sample articles data - matching exact structure from DataService.php
+    # Sample articles data
     articles = [
         {
             "id": "1",
@@ -150,7 +150,7 @@ def create_sample_data():
         }
     ]
     
-    # Sample gallery data - matching exact structure from DataService.php
+    # Sample gallery data
     gallery = [
         {
             "id": "1",

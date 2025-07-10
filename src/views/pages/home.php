@@ -284,7 +284,7 @@
 
     <?php include SRC_PATH . '/views/components/footer.php'; ?>
 
-    <script src="/js/main-complete.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>
