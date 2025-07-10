@@ -6,7 +6,7 @@
     <?php endif; ?>
 
     <?php if (!empty($article['image'])): ?>
-        <div class="aspect-video bg-light overflow-hidden relative">
+        <div class="aspect-video bg-gray-100 dark:bg-gray-700 overflow-hidden relative">
             <img src="<?php echo htmlspecialchars($article['image']); ?>"
                 alt="<?php echo htmlspecialchars($article['title']); ?>"
                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
@@ -36,7 +36,7 @@
             <?php echo htmlspecialchars($article['excerpt'] ?? substr($article['content'] ?? '', 0, 150) . '...'); ?>
         </p>
 
-        <div class="flex items-center justify-between pt-4 border-t border-border dark:border-gray-700">
+        <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
             <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
                 <div class="flex items-center">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
@@ -68,7 +68,7 @@
         <?php if (isset($article['tags']) && !empty($article['tags'])): ?>
             <div class="flex flex-wrap gap-2 mt-4">
                 <?php foreach (array_slice($article['tags'], 0, 3) as $tag): ?>
-                    <span class="inline-flex items-center px-2 py-1 text-xs bg-light dark:bg-gray-800 text-dark dark:text-light rounded-full">
+                    <span class="inline-flex items-center px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-dark dark:text-light rounded-full">
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1">
                             <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
                             <line x1="7" y1="7" x2="7.01" y2="7" />

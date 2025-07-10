@@ -1039,6 +1039,11 @@ video {
     border-color: rgb(16 24 32 / var(--tw-border-opacity, 1))
 }
 
+.border-gray-200 {
+    --tw-border-opacity: 1;
+    border-color: rgb(229 231 235 / var(--tw-border-opacity, 1))
+}
+
 .border-gray-800 {
     --tw-border-opacity: 1;
     border-color: rgb(31 41 55 / var(--tw-border-opacity, 1))
@@ -2244,6 +2249,11 @@ strong {
     color: rgb(156 163 175 / var(--tw-text-opacity, 1))
 }
 
+.dark\:text-gray-500:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(107 114 128 / var(--tw-text-opacity, 1))
+}
+
 .dark\:text-gray-600:is(.dark *) {
     --tw-text-opacity: 1;
     color: rgb(75 85 99 / var(--tw-text-opacity, 1)) !important;
@@ -2304,16 +2314,20 @@ strong {
     --tw-ring-color: rgb(254 231 21 / var(--tw-ring-opacity, 1))
 }
 
-/* Overrides CSS pour les backgrounds en mode dark */
-/* Force bg-white à devenir bg-gray-50 en mode dark */
-.dark .bg-white {
+/* Overrides CSS spécifiques pour les sections principales en mode dark */
+/* Force bg-white des sections principales à devenir bg-gray-50 en mode dark */
+.dark body.bg-white,
+.dark main.bg-white,
+.dark section.bg-white {
     --tw-bg-opacity: 1;
     background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1)) !important;
     /* gray-50 */
 }
 
-/* Force bg-gray-50 à devenir bg-gray-900 en mode dark */
-.dark .bg-gray-50 {
+/* Force bg-gray-50 des sections principales à devenir bg-gray-900 en mode dark */
+.dark body.bg-gray-50,
+.dark main.bg-gray-50,
+.dark section.bg-gray-50 {
     --tw-bg-opacity: 1;
     background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1)) !important;
     /* gray-900 */
@@ -2344,9 +2358,9 @@ strong {
     background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
 }
 
-/* Overrides supplémentaires pour bg-light et bg-dark */
-/* Force bg-light (gris clair) à devenir bg-gray-200 en mode dark */
-.dark .bg-light {
+/* Overrides spécifiques pour bg-light des sections principales */
+/* Force bg-light des sections principales à devenir bg-gray-200 en mode dark */
+.dark section.bg-light {
     --tw-bg-opacity: 1;
     background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1)) !important;
     /* gray-200 */
@@ -2381,17 +2395,24 @@ strong {
 }
 
 /* Classes spécifiques pour forcer le mode light sur certaines sections */
-/* Force les textes dans les sections formations et avis à rester en mode light */
-.dark #formations .text-dark,
-.dark #avis .text-dark {
+/* Force les titres des sections formations et avis à rester sombres sur fond clair */
+.dark #formations>div>div>h2.text-dark,
+.dark #avis>div>div>h2.text-dark {
     --tw-text-opacity: 1;
     color: rgb(16 24 32 / var(--tw-text-opacity, 1)) !important;
-    /* dark color */
+    /* dark color pour lisibilité sur fond clair */
 }
 
-.dark #formations .text-gray-600,
-.dark #avis .text-gray-600 {
+/* Garde les descriptions des sections lisibles sur fond clair en mode dark */
+.dark #formations>div>div>p.text-gray-600,
+.dark #avis>div>div>p.text-gray-600 {
     --tw-text-opacity: 1;
     color: rgb(75 85 99 / var(--tw-text-opacity, 1)) !important;
-    /* gray-600 */
+    /* gray-600 pour lisibilité des descriptions sur fond clair */
+}
+
+/* Classe dark:bg-gray-800 manquante pour les cartes */
+.dark\:bg-gray-800:is(.dark *) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
 }

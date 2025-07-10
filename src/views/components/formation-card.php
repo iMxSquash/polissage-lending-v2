@@ -72,7 +72,7 @@ $levelText = $getLevelText($level);
                     <h3 class="text-xl font-bold line-clamp-2 min-h-[3rem] text-dark dark:text-light font-title">
                         <?php echo htmlspecialchars($course['title']); ?>
                     </h3>
-                    <div class="text-2xl font-bold text-dark dark:text-primary ml-2">
+                    <div class="text-2xl font-bold text-dark dark:text-light ml-2">
                         <?php echo htmlspecialchars($course['price'] . ' €' ?? 'Gratuit'); ?>
                     </div>
                 </div>
@@ -86,14 +86,14 @@ $levelText = $getLevelText($level);
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
-                <div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                <div class="flex items-center text-sm text-gray-600 dark:text-gray-400">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-primary">
                         <circle cx="12" cy="12" r="10" />
                         <polyline points="12,6 12,12 16,14" />
                     </svg>
                     <span><?php echo htmlspecialchars($course['duration'] ?? '2'); ?> heures</span>
                 </div>
-                <div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                <div class="flex items-center text-sm text-gray-600 dark:text-gray-400">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-primary">
                         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
                         <circle cx="9" cy="7" r="4" />
@@ -103,7 +103,7 @@ $levelText = $getLevelText($level);
                     <span><?php echo htmlspecialchars($course['instructor'] ?? 'Expert'); ?></span>
                 </div>
                 <?php if (!empty($course['category'])): ?>
-                    <div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                    <div class="flex items-center text-sm text-gray-600 dark:text-gray-400">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-primary">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                             <circle cx="12" cy="10" r="3" />
@@ -111,7 +111,7 @@ $levelText = $getLevelText($level);
                         <span><?php echo htmlspecialchars($course['category']); ?></span>
                     </div>
                 <?php endif; ?>
-                <div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                <div class="flex items-center text-sm text-gray-600 dark:text-gray-400">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-primary">
                         <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                         <line x1="16" y1="2" x2="16" y2="6" />
