@@ -2166,3 +2166,214 @@ strong {
 .group:hover .group-hover\:opacity-100 {
     opacity: 1;
 }
+
+.dark\:border-gray-600:is(.dark *) {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity, 1))
+}
+
+.dark\:border-gray-700:is(.dark *) {
+    --tw-border-opacity: 1;
+    border-color: rgb(55 65 81 / var(--tw-border-opacity, 1))
+}
+
+.dark\:bg-accent:is(.dark *) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(211 47 47 / var(--tw-bg-opacity, 1))
+}
+
+.dark\:bg-dark:is(.dark *) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(16 24 32 / var(--tw-bg-opacity, 1))
+}
+
+.dark\:bg-dark\/80:is(.dark *) {
+    background-color: #101820cc
+}
+
+.dark\:bg-dark\/90:is(.dark *) {
+    background-color: #101820e6
+}
+
+.dark\:bg-gray-200:is(.dark *) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1))
+}
+
+.dark\:bg-gray-700:is(.dark *) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1))
+}
+
+.dark\:bg-gray-800:is(.dark *) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1))
+}
+
+.dark\:bg-primary:is(.dark *) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(254 231 21 / var(--tw-bg-opacity, 1))
+}
+
+.dark\:bg-primary\/20:is(.dark *) {
+    background-color: #fee71533
+}
+
+.dark\:bg-success:is(.dark *) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(39 174 96 / var(--tw-bg-opacity, 1))
+}
+
+.dark\:bg-opacity-100:is(.dark *) {
+    --tw-bg-opacity: 1
+}
+
+.dark\:text-dark:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(16 24 32 / var(--tw-text-opacity, 1))
+}
+
+.dark\:text-gray-300:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(209 213 219 / var(--tw-text-opacity, 1))
+}
+
+.dark\:text-gray-400:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity, 1))
+}
+
+.dark\:text-gray-600:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(75 85 99 / var(--tw-text-opacity, 1))
+}
+
+.dark\:text-light:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(242 242 242 / var(--tw-text-opacity, 1))
+}
+
+.dark\:text-primary:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(254 231 21 / var(--tw-text-opacity, 1))
+}
+
+.dark\:text-text-dark:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(242 242 242 / var(--tw-text-opacity, 1))
+}
+
+.dark\:hover\:bg-gray-700:hover:is(.dark *) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1))
+}
+
+.dark\:hover\:bg-gray-800\/50:hover:is(.dark *) {
+    background-color: #1f293780
+}
+
+.dark\:hover\:text-dark:hover:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(16 24 32 / var(--tw-text-opacity, 1))
+}
+
+.dark\:hover\:text-light:hover:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(242 242 242 / var(--tw-text-opacity, 1))
+}
+
+.dark\:hover\:text-primary:hover:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(254 231 21 / var(--tw-text-opacity, 1))
+}
+
+.dark\:hover\:text-primary-dark:hover:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(230 208 20 / var(--tw-text-opacity, 1))
+}
+
+.dark\:focus\:border-primary:focus:is(.dark *) {
+    --tw-border-opacity: 1;
+    border-color: rgb(254 231 21 / var(--tw-border-opacity, 1))
+}
+
+.dark\:focus\:ring-primary:focus:is(.dark *) {
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(254 231 21 / var(--tw-ring-opacity, 1))
+}
+
+/* Overrides CSS pour les backgrounds en mode dark */
+/* Force bg-white à devenir bg-gray-50 en mode dark */
+.dark .bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1)) !important;
+    /* gray-50 */
+}
+
+/* Force bg-gray-50 à devenir bg-gray-900 en mode dark */
+.dark .bg-gray-50 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1)) !important;
+    /* gray-900 */
+}
+
+/* Overrides pour les éléments avec dark:bg-white (devient gray-50 en dark) */
+.dark .dark\:bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1)) !important;
+    /* gray-50 */
+}
+
+/* Overrides pour les éléments avec dark:bg-gray-50 (devient gray-900 en dark) */
+.dark .dark\:bg-gray-50 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1)) !important;
+    /* gray-900 */
+}
+
+/* Classes utilitaires pour les nouveaux mappings de couleurs */
+.dark\:bg-gray-50:is(.dark *) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
+}
+
+.dark\:bg-gray-900:is(.dark *) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
+}
+
+/* Overrides supplémentaires pour bg-light et bg-dark */
+/* Force bg-light (gris clair) à devenir bg-gray-200 en mode dark */
+.dark .bg-light {
+    --tw-bg-opacity: 1;
+    background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1)) !important;
+    /* gray-200 */
+}
+
+/* Force dark:bg-dark à utiliser gray-900 au lieu de son gris très sombre */
+.dark .dark\:bg-dark:is(.dark *),
+.dark\:bg-dark:is(.dark *) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1)) !important;
+    /* gray-900 */
+}
+
+/* Override pour bg-dark en mode normal (reste gris sombre mais cohérent) */
+.bg-dark {
+    --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1)) !important;
+    /* gray-800 */
+}
+
+/* Override pour bg-light en mode normal (reste bg-white équivalent) */
+.bg-light {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1)) !important;
+    /* white */
+}
+
+/* Classe utilitaire pour dark:bg-gray-200 */
+.dark\:bg-gray-200:is(.dark *) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
+}

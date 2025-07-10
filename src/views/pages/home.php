@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
-<body class="transition-colors duration-300">
+<body class="transition-colors duration-300 bg-gray-50 dark:bg-gray-900">
     <script>
         // Initialize theme immediately to prevent flash
         const savedTheme = localStorage.getItem('theme');
@@ -19,7 +19,7 @@
     </script>
     <?php include SRC_PATH . '/views/components/header.php'; ?>
 
-    <main class="min-h-screen">
+    <main class="min-h-screen bg-gray-50 dark:bg-gray-900">
         <div class="flex flex-col gap-20">
             <!-- Hero Section -->
             <section class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16 mt-16 text-center">
@@ -49,7 +49,7 @@
             </section>
 
             <!-- Stats Section -->
-            <section class="py-16">
+            <section class="py-16 bg-gray-50 dark:bg-gray-900">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                         <div class="flex flex-col items-center">
@@ -78,7 +78,7 @@
             </section>
 
             <!-- Formations Section -->
-            <section id="formations" class="py-16">
+            <section id="formations" class="py-16 bg-light dark:bg-gray-200">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center mb-12">
                         <h2 class="text-3xl md:text-4xl font-bold font-title text-dark dark:text-light mb-4">Nos Formations</h2>
@@ -158,7 +158,7 @@
             </section>
 
             <!-- Avis Google Section -->
-            <section id="avis" class="py-16 bg-gray-50 dark:bg-gray-900">
+            <section id="avis" class="py-16 bg-light dark:bg-gray-200">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center mb-12">
                         <h2 class="text-3xl md:text-4xl font-bold font-title text-dark dark:text-light mb-4">Ce que disent nos clients</h2>
@@ -209,7 +209,7 @@
             </section>
 
             <!-- Galerie Photos Section -->
-            <section class="py-16">
+            <section class="py-16 bg-gray-50 dark:bg-gray-900">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center mb-12">
                         <h2 class="text-3xl md:text-4xl font-bold font-title text-dark dark:text-light mb-4">Notre Galerie</h2>
