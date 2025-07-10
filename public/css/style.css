@@ -2380,16 +2380,17 @@ strong {
     background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
 }
 
-/* Overrides pour forcer le mode light sur certains textes */
-/* Force les titres avec text-dark à rester sombres même en dark mode */
-.dark .text-dark {
+/* Classes spécifiques pour forcer le mode light sur certaines sections */
+/* Force les textes dans les sections formations et avis à rester en mode light */
+.dark #formations .text-dark,
+.dark #avis .text-dark {
     --tw-text-opacity: 1;
     color: rgb(16 24 32 / var(--tw-text-opacity, 1)) !important;
     /* dark color */
 }
 
-/* Force les textes avec text-gray-600 à rester gris moyen même en dark mode */
-.dark .text-gray-600 {
+.dark #formations .text-gray-600,
+.dark #avis .text-gray-600 {
     --tw-text-opacity: 1;
     color: rgb(75 85 99 / var(--tw-text-opacity, 1)) !important;
     /* gray-600 */
