@@ -1294,7 +1294,7 @@ header {
 
 /* CTA Section */
 .cta-section {
-    background: var(--color-primary);
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
     color: white;
     padding: 4rem 0;
     text-align: center;
@@ -1316,7 +1316,7 @@ header {
 }
 
 .btn-cta {
-    background-color: var(--color-accent);
+    background-color: #eab308;
     color: #1f2937;
     padding: 1rem 2rem;
     font-size: 1.1rem;
@@ -1324,7 +1324,7 @@ header {
 }
 
 .btn-cta:hover {
-    background-color: #f59e0b;
+    background-color: #ca8a04;
     transform: translateY(-2px);
 }
 
