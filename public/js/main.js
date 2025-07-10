@@ -1,4 +1,3 @@
-// Main JavaScript - Mobile First with Dark Mode
 class App {
     constructor() {
         this.init();

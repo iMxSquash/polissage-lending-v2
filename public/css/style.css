@@ -236,6 +236,7 @@ input:where([type=button]),
 input:where([type=reset]),
 input:where([type=submit]) {
     -webkit-appearance: button;
+    appearance: button;
     background-color: transparent;
     background-image: none
 }
@@ -256,18 +257,18 @@ progress {
 ::-webkit-outer-spin-button {
     height: auto
 }
-
 [type=search] {
     -webkit-appearance: textfield;
+    appearance: textfield;
     outline-offset: -2px
 }
-
 ::-webkit-search-decoration {
-    -webkit-appearance: none
+    -webkit-appearance: none;
+    appearance: none
 }
-
 ::-webkit-file-upload-button {
     -webkit-appearance: button;
+    appearance: button;
     font: inherit
 }
 
@@ -346,7 +347,6 @@ iframe,
 embed,
 object {
     display: block;
-    vertical-align: middle
 }
 
 img,
@@ -555,15 +555,18 @@ video {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2
+    -webkit-line-clamp: 2;
+    line-clamp: 2
 }
 
 .line-clamp-3 {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3
+    -webkit-line-clamp: 3;
+    line-clamp: 3
 }
+
 
 .block {
     display: block
@@ -2319,8 +2322,6 @@ strong {
     --tw-ring-color: rgb(254 231 21 / var(--tw-ring-opacity, 1))
 }
 
-/* Overrides CSS spécifiques pour les sections principales en mode dark */
-/* Force bg-white des sections principales à devenir bg-gray-50 en mode dark */
 .dark body.bg-white,
 .dark main.bg-white,
 .dark section.bg-white {
@@ -2329,7 +2330,6 @@ strong {
     /* gray-50 */
 }
 
-/* Force bg-gray-50 des sections principales à devenir bg-gray-900 en mode dark */
 .dark body.bg-gray-50,
 .dark main.bg-gray-50,
 .dark section.bg-gray-50 {
@@ -2338,21 +2338,18 @@ strong {
     /* gray-900 */
 }
 
-/* Overrides pour les éléments avec dark:bg-white (devient gray-50 en dark) */
 .dark .dark\:bg-white {
     --tw-bg-opacity: 1;
     background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1)) !important;
     /* gray-50 */
 }
 
-/* Overrides pour les éléments avec dark:bg-gray-50 (devient gray-900 en dark) */
 .dark .dark\:bg-gray-50 {
     --tw-bg-opacity: 1;
     background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1)) !important;
     /* gray-900 */
 }
 
-/* Classes utilitaires pour les nouveaux mappings de couleurs */
 .dark\:bg-gray-50:is(.dark *) {
     --tw-bg-opacity: 1;
     background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
@@ -2363,15 +2360,12 @@ strong {
     background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
 }
 
-/* Overrides spécifiques pour bg-light des sections principales */
-/* Force bg-light des sections principales à devenir bg-gray-200 en mode dark */
 .dark section.bg-light {
     --tw-bg-opacity: 1;
     background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1)) !important;
     /* gray-200 */
 }
 
-/* Force dark:bg-dark à utiliser gray-900 au lieu de son gris très sombre */
 .dark .dark\:bg-dark:is(.dark *),
 .dark\:bg-dark:is(.dark *) {
     --tw-bg-opacity: 1;
@@ -2379,44 +2373,35 @@ strong {
     /* gray-900 */
 }
 
-/* Override pour bg-dark en mode normal (reste gris sombre mais cohérent) */
 .bg-dark {
     --tw-bg-opacity: 1;
     background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1)) !important;
     /* gray-800 */
 }
 
-/* Override pour bg-light en mode normal (reste bg-white équivalent) */
 .bg-light {
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1)) !important;
     /* white */
 }
 
-/* Classe utilitaire pour dark:bg-gray-200 */
 .dark\:bg-gray-200:is(.dark *) {
     --tw-bg-opacity: 1;
     background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
 }
 
-/* Classes spécifiques pour forcer le mode light sur certaines sections */
-/* Force les titres des sections formations et avis à rester sombres sur fond clair */
 .dark #formations>div>div>h2.text-dark,
 .dark #avis>div>div>h2.text-dark {
     --tw-text-opacity: 1;
     color: rgb(16 24 32 / var(--tw-text-opacity, 1)) !important;
-    /* dark color pour lisibilité sur fond clair */
 }
 
-/* Garde les descriptions des sections lisibles sur fond clair en mode dark */
 .dark #formations>div>div>p.text-gray-600,
 .dark #avis>div>div>p.text-gray-600 {
     --tw-text-opacity: 1;
     color: rgb(75 85 99 / var(--tw-text-opacity, 1)) !important;
-    /* gray-600 pour lisibilité des descriptions sur fond clair */
 }
 
-/* Classe dark:bg-gray-800 manquante pour les cartes */
 .dark\:bg-gray-800:is(.dark *) {
     --tw-bg-opacity: 1;
     background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));

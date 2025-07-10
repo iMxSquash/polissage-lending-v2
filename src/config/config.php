@@ -1,5 +1,4 @@
 <?php
-// Main configuration file
 
 return [
     'app' => [
