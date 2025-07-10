@@ -1,0 +1,65 @@
+[
+  {
+    "id": "1",
+    "title": "Les 5 erreurs à éviter lors du polissage",
+    "content": "Découvrez les erreurs les plus communes que font les débutants et comment les éviter pour un résultat professionnel. Dans cet article complet, nous explorons les techniques à maîtriser.",
+    "excerpt": "Découvrez les erreurs les plus communes que font les débutants et comment les éviter pour un résultat professionnel.",
+    "category": "Conseils",
+    "author": "Jean Dupont",
+    "author_avatar": "/images/authors/jean-dupont.jpg",
+    "image": "https://formationdetailing.com/wp-content/uploads/2024/07/obtenir-une-certification-en-polissage-et-lustrage-automobile-chez-sp-formation-detailing-78-3-scaled.jpg",
+    "created_at": "2024-12-15",
+    "publishedAt": "2024-12-15",
+    "readTime": "5",
+    "views": 1250,
+    "likes": 89,
+    "comments": 23,
+    "tags": [
+      "polissage",
+      "conseils",
+      "débutant"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Quel matériel choisir pour débuter ?",
+    "content": "Guide complet pour choisir le bon équipement de polissage selon votre budget et vos besoins. Comparatif des meilleures marques et conseils d'experts.",
+    "excerpt": "Guide complet pour choisir le bon équipement de polissage selon votre budget et vos besoins.",
+    "category": "Matériel",
+    "author": "Marie Martin",
+    "author_avatar": "/images/authors/marie-martin.jpg",
+    "image": "https://formationdetailing.com/wp-content/uploads/2022/10/les-outils-pour-un-polissage-auto-reussi.jpg",
+    "created_at": "2024-12-10",
+    "publishedAt": "2024-12-10",
+    "readTime": "7",
+    "views": 980,
+    "likes": 67,
+    "comments": 15,
+    "tags": [
+      "matériel",
+      "équipement",
+      "guide"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Techniques avancées de correction de peinture",
+    "content": "Maîtrisez les techniques professionnelles pour corriger les défauts de peinture les plus complexes. Formation avancée avec nos experts certifiés.",
+    "excerpt": "Maîtrisez les techniques professionnelles pour corriger les défauts de peinture les plus complexes.",
+    "category": "Techniques",
+    "author": "Pierre Durand",
+    "author_avatar": "/images/authors/pierre-durand.jpg",
+    "image": "https://seformerauxmetiersdudetailing.fr/wp-content/uploads/2022/01/Pourquoi-se-former-au-metier-du-polissage-1-1-1024x683.jpg",
+    "created_at": "2024-12-05",
+    "publishedAt": "2024-12-05",
+    "readTime": "10",
+    "views": 1450,
+    "likes": 112,
+    "comments": 34,
+    "tags": [
+      "techniques",
+      "avancé",
+      "correction"
+    ]
+  }
+]

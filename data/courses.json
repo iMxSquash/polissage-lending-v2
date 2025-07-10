@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "title": "Polissage Débutant",
+    "description": "Apprenez les bases du polissage automobile avec notre formation complète pour débutants.",
+    "duration": "16 heures",
+    "price": "299",
+    "old_price": null,
+    "level": "Débutant",
+    "category": "Polissage",
+    "instructor": "Jean Dupont",
+    "students": "124",
+    "rating": 5,
+    "reviews_count": "89",
+    "image": "https://formationdetailing.com/wp-content/uploads/2024/07/formation-au-detailing-auto-et-lavage-lustrage-de-voiture-chez-sp-formation-78-3-scaled.jpg"
+  },
+  {
+    "id": "2",
+    "title": "Polissage Avancé",
+    "description": "Techniques avancées de polissage et correction pour les professionnels du secteur.",
+    "duration": "24 heures",
+    "price": "499",
+    "old_price": "599",
+    "level": "Intermédiaire",
+    "category": "Polissage",
+    "instructor": "Marie Martin",
+    "students": "78",
+    "rating": 5,
+    "reviews_count": "67",
+    "image": "https://sp-formation.com/wp-content/uploads/2021/11/formation-polissage-et-renovation-esthetique-auto-a-paris-2-e1656933316358-768x632.jpg"
+  },
+  {
+    "id": "3",
+    "title": "Polissage Professionnel",
+    "description": "Formation complète pour devenir professionnel du polissage automobile certifié.",
+    "duration": "40 heures",
+    "price": "799",
+    "old_price": "999",
+    "level": "Avancé",
+    "category": "Polissage",
+    "instructor": "Lucie Lefebvre",
+    "students": "156",
+    "rating": 5,
+    "reviews_count": "112",
+    "image": "https://sp-formation.com/wp-content/uploads/2022/07/formation-aux-metiers-du-detailing-dans-le-78-pres-de-trappes-en-yvelines-chez-sp-formation-9.jpg"
+  }
+]

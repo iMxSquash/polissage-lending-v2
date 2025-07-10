@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "author": "Sophie Leclerc",
+    "avatar": "/images/avatars/sophie-leclerc.jpg",
+    "rating": 5,
+    "comment": "Formation exceptionnelle ! J'ai appris énormément et l'équipe est très professionnelle. Je recommande vivement cette formation à tous ceux qui souhaitent se lancer dans le polissage automobile.",
+    "created_at": "2024-11-20",
+    "verified": true
+  },
+  {
+    "id": "2",
+    "author": "Marc Dubois",
+    "avatar": "/images/avatars/marc-dubois.jpg",
+    "rating": 5,
+    "comment": "Excellent centre de formation. Les formateurs sont passionnés et très pédagogues. Matériel de qualité et locaux parfaitement équipés.",
+    "created_at": "2024-11-15",
+    "verified": true
+  },
+  {
+    "id": "3",
+    "author": "Anne Moreau",
+    "avatar": "/images/avatars/anne-moreau.jpg",
+    "rating": 4,
+    "comment": "Très bonne formation, j'ai pu rapidement mettre en pratique ce que j'ai appris. Merci à toute l'équipe pour leur accompagnement !",
+    "created_at": "2024-11-10",
+    "verified": true
+  },
+  {
+    "id": "4",
+    "author": "Pierre Martin",
+    "avatar": "/images/avatars/pierre-martin.jpg",
+    "rating": 5,
+    "comment": "Formation de très haute qualité avec des formateurs experts. Je recommande sans hésitation pour tous les niveaux.",
+    "created_at": "2024-11-05",
+    "verified": true
+  }
+]

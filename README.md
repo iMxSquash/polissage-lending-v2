@@ -43,10 +43,46 @@ polissage-lending-v2/
 
 ## Setup
 
-1. Configure web server to point to `public/` directory
-2. Update database configuration in `src/config/config.php`
-3. Ensure Python is available for data processing
-4. Set appropriate file permissions
+### 1. Configuration du serveur web
+
+Configure your web server to point to `public/` directory as document root.
+
+### 2. Installation Python
+
+```bash
+# Navigate to python directory
+cd python/
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Initialize sample data (optional)
+python init_data.py
+
+# Start Python API server
+python api.py
+```
+
+The Python API will be available at `http://localhost:5000`
+
+### 3. PHP Configuration
+
+1. Update database configuration in `src/config/config.php`
+2. Set appropriate file permissions for web server
+3. Ensure PHP 7.4+ is installed
+
+### 4. Quick Start Commands
+
+```bash
+# Start PHP development server (alternative)
+php -S localhost:8080 -t public/
+
+# Test Python API
+curl http://localhost:5000/health
+
+# Run data processors
+python python/test_processors.py
+```
 
 ## Requirements
 

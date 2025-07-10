@@ -9,6 +9,17 @@ class DataService
 {
     public function getCourses()
     {
+        // Try to load from JSON file first, fallback to hardcoded data
+        $jsonFile = __DIR__ . '/../../data/courses.json';
+        if (file_exists($jsonFile)) {
+            $jsonData = file_get_contents($jsonFile);
+            $courses = json_decode($jsonData, true);
+            if ($courses !== null) {
+                return $courses;
+            }
+        }
+
+        // Fallback to hardcoded data
         return [
             [
                 'id' => '1',
@@ -60,6 +71,17 @@ class DataService
 
     public function getReviews()
     {
+        // Try to load from JSON file first, fallback to hardcoded data
+        $jsonFile = __DIR__ . '/../../data/reviews.json';
+        if (file_exists($jsonFile)) {
+            $jsonData = file_get_contents($jsonFile);
+            $reviews = json_decode($jsonData, true);
+            if ($reviews !== null) {
+                return $reviews;
+            }
+        }
+
+        // Fallback to hardcoded data
         return [
             [
                 'id' => '1',
@@ -101,7 +123,7 @@ class DataService
     }
     public function processDataWithPython($data, $endpoint)
     {
-        $pythonApiUrl = $_ENV['PYTHON_API_URL'] ?? 'http://localhost:10000';
+        $pythonApiUrl = $_ENV['PYTHON_API_URL'] ?? 'http://localhost:5000';
         $url = $pythonApiUrl . '/process/' . $endpoint;
 
         $jsonData = json_encode($data);
@@ -142,6 +164,17 @@ class DataService
 
     public function getArticles()
     {
+        // Try to load from JSON file first, fallback to hardcoded data
+        $jsonFile = __DIR__ . '/../../data/articles.json';
+        if (file_exists($jsonFile)) {
+            $jsonData = file_get_contents($jsonFile);
+            $articles = json_decode($jsonData, true);
+            if ($articles !== null) {
+                return $articles;
+            }
+        }
+
+        // Fallback to hardcoded data
         return [
             [
                 'id' => '1',
@@ -187,6 +220,17 @@ class DataService
 
     public function getGallery()
     {
+        // Try to load from JSON file first, fallback to hardcoded data
+        $jsonFile = __DIR__ . '/../../data/gallery.json';
+        if (file_exists($jsonFile)) {
+            $jsonData = file_get_contents($jsonFile);
+            $gallery = json_decode($jsonData, true);
+            if ($gallery !== null) {
+                return $gallery;
+            }
+        }
+
+        // Fallback to hardcoded data
         return [
             [
                 'id' => '1',

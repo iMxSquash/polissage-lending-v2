@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "title": "Atelier pratique de polissage",
+    "description": "Nos étudiants en action lors d'un atelier pratique",
+    "imageUrl": "https://sp-formation.com/wp-content/uploads/2022/07/formation-au-nettoyage-automobile-a-paris-2-450x253.jpg.webp"
+  },
+  {
+    "id": "2",
+    "title": "Correction de défauts",
+    "description": "Démonstration de correction de défauts profonds",
+    "imageUrl": "https://formationdetailing.com/wp-content/uploads/2024/07/formation-nettoyage-polissage-et-lustrage-automobile-chez-sp-formation-detailing-78-13-scaled.jpg"
+  },
+  {
+    "id": "3",
+    "title": "Résultat final",
+    "description": "Véhicule après traitement complet",
+    "imageUrl": "https://formationdetailing.com/wp-content/uploads/2021/05/formation-detailing-formez-vous-a-la-preparation-esthetique-auto.jpg"
+  },
+  {
+    "id": "4",
+    "title": "Techniques avancées",
+    "description": "Formation aux techniques avancées de lustrage",
+    "imageUrl": "https://seformerauxmetiersdudetailing.fr/wp-content/uploads/2022/02/apprendre-pour-une-reconversion-pro-le-metier-du-detailing-1-1024x768.jpg"
+  },
+  {
+    "id": "5",
+    "title": "Certification",
+    "description": "Remise de certificats à nos diplômés",
+    "imageUrl": "https://maniac-autodetailing.fr/wp-content/uploads/2022/12/MANIAC-AUTO-Detailing-Center-Formation-Stage1-1-1.jpg"
+  },
+  {
+    "id": "6",
+    "title": "Équipement professionnel",
+    "description": "Notre équipement professionnel de polissage",
+    "imageUrl": "https://formationdetailing.com/wp-content/uploads/2022/10/les-outils-pour-un-polissage-auto-reussi.jpg"
+  }
+]

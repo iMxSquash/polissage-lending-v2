@@ -1878,7 +1878,7 @@ header {
 }
 
 .bg-gradient-to-br {
-    background-image: linear-gradient(to bottom right, var(--tw-gradient-from), var(--tw-gradient-to));
+    background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
 
 .duration-300 {
@@ -3820,4 +3820,124 @@ header {
 
 .to-blue-800 {
     --tw-gradient-to: #1e40af;
+}
+
+/* === MISSING UTILITY CLASSES FOR BUTTON STYLES === */
+
+/* Focus states */
+.focus\\:outline-none:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.focus\\:ring-2:focus {
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.focus\\:ring-offset-2:focus {
+    --tw-ring-offset-width: 2px;
+}
+
+.focus\\:ring-primary:focus {
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgba(254, 231, 21, var(--tw-ring-opacity));
+}
+
+/* Disabled states */
+.disabled\\:opacity-60:disabled {
+    opacity: 0.6;
+}
+
+.disabled\\:pointer-events-none:disabled {
+    pointer-events: none;
+}
+
+/* Transform */
+.transform {
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\\:-translate-y-0_5:hover {
+    --tw-translate-y: -0.125rem;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+/* Background colors and opacity */
+.hover\\:bg-primary:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(254, 231, 21, var(--tw-bg-opacity));
+}
+
+.hover\\:bg-opacity-10:hover {
+    --tw-bg-opacity: 0.1;
+}
+
+/* Padding utilities */
+.px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.py-2_5 {
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+}
+
+/* Text colors */
+.text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.text-dark {
+    --tw-text-opacity: 1;
+    color: rgba(16, 24, 32, var(--tw-text-opacity));
+}
+
+.hover\\:text-primary-dark:hover {
+    --tw-text-opacity: 1;
+    color: rgba(230, 208, 20, var(--tw-text-opacity));
+}
+
+.dark\\:text-primary {
+    --tw-text-opacity: 1;
+    color: rgba(254, 231, 21, var(--tw-text-opacity));
+}
+
+.dark .dark\\:text-primary {
+    --tw-text-opacity: 1;
+    color: rgba(254, 231, 21, var(--tw-text-opacity));
+}
+
+.dark\\:hover\\:text-light:hover {
+    --tw-text-opacity: 1;
+    color: rgba(242, 242, 242, var(--tw-text-opacity));
+}
+
+.dark .dark\\:hover\\:text-light:hover {
+    --tw-text-opacity: 1;
+    color: rgba(242, 242, 242, var(--tw-text-opacity));
+}
+
+/* CSS Variables for transforms */
+:root {
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-ring-inset: ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgba(59, 130, 246, 0.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
 }
