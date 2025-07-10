@@ -25,7 +25,7 @@
             <section class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16 mt-16 text-center">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center">
-                        <h1 class="text-4xl md:text-6xl font-bold font-title mb-6 leading-tight">
+                        <h1 class="text-4xl md:text-6xl font-bold font-title mb-6 leading-tight text-light">
                             Formation en Polissage
                             <span class="text-yellow-400">Automobile</span>
                         </h1>
@@ -81,8 +81,8 @@
             <section id="formations" class="py-16 bg-light dark:bg-gray-200">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center mb-12">
-                        <h2 class="text-3xl md:text-4xl font-bold font-title text-dark dark:text-light mb-4">Nos Formations</h2>
-                        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        <h2 class="text-3xl md:text-4xl font-bold font-title text-dark mb-4">Nos Formations</h2>
+                        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
                             Découvrez nos programmes de formation adaptés à tous les niveaux.
                         </p>
                     </div>
@@ -267,7 +267,7 @@
             <!-- CTA Section -->
             <section class="py-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold font-title mb-6">
+                    <h2 class="text-3xl md:text-4xl font-bold font-title mb-6 text-light">
                         Prêt à commencer votre formation ?
                     </h2>
                     <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
