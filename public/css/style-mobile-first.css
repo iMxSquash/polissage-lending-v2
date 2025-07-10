@@ -1703,69 +1703,10 @@ header {
     background-color: rgba(16, 24, 32, 0.9);
 }
 
-/* Additional utility classes for React design */
-.bg-white {
-    background-color: #ffffff;
-}
-
-.bg-gray-800 {
-    background-color: #1f2937;
-}
-
-.bg-gray-600 {
-    background-color: #4b5563;
-}
-
-.bg-gray-300 {
-    background-color: #d1d5db;
-}
-
-.bg-success {
-    background-color: var(--color-success);
-}
-
-.bg-accent {
-    background-color: var(--color-accent);
-}
-
-.bg-opacity-10 {
-    background-color: rgba(254, 231, 21, 0.1);
-    /* primary color with 10% opacity */
-}
-
-.bg-opacity-50 {
-    background-color: rgba(254, 231, 21, 0.5);
-    /* primary color with 50% opacity */
-}
-
-.bg-opacity-100 {
-    background-color: rgba(254, 231, 21, 1);
-    /* primary color with 100% opacity */
-}
-
-.hover\\:bg-opacity-10:hover {
-    background-color: rgba(254, 231, 21, 0.1);
-    /* primary color with 10% opacity on hover */
-}
-
-.text-gray-600 {
-    color: #4b5563;
-}
-
-.text-gray-300 {
-    color: #d1d5db;
-}
-
-.text-gray-500 {
-    color: #6b7280;
-}
-
-.text-gray-400 {
-    color: #9ca3af;
-}
-
-.text-success {
-    color: var(--color-success);
+/* Additional hover translate utilities */
+.hover\\:-translate-y-1:hover {
+    --tw-translate-y: -0.25rem;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .dark .bg-gray-800 {

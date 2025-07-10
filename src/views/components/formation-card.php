@@ -85,7 +85,6 @@ $levelText = $getLevelText($level);
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
                 <div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
-                    <!-- Icône Clock SVG Lucide -->
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-primary">
                         <circle cx="12" cy="12" r="10" />
                         <polyline points="12,6 12,12 16,14" />
@@ -93,7 +92,6 @@ $levelText = $getLevelText($level);
                     <span><?php echo htmlspecialchars($course['duration'] ?? '2'); ?> heures</span>
                 </div>
                 <div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
-                    <!-- Icône Users SVG Lucide -->
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-primary">
                         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
                         <circle cx="9" cy="7" r="4" />
@@ -104,7 +102,6 @@ $levelText = $getLevelText($level);
                 </div>
                 <?php if (!empty($course['category'])): ?>
                     <div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
-                        <!-- Icône MapPin SVG Lucide -->
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-primary">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                             <circle cx="12" cy="10" r="3" />
@@ -113,7 +110,6 @@ $levelText = $getLevelText($level);
                     </div>
                 <?php endif; ?>
                 <div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
-                    <!-- Icône Calendar SVG Lucide -->
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-primary">
                         <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                         <line x1="16" y1="2" x2="16" y2="6" />
@@ -125,7 +121,7 @@ $levelText = $getLevelText($level);
             </div>
 
             <div class="p-0 m-0 flex items-center justify-between">
-                <div class="flex items-center space-x-1">
+                <div class="flex items-center gap-1">
                     <!-- Icône Award SVG Lucide -->
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
                         <circle cx="12" cy="8" r="7" />
@@ -133,7 +129,7 @@ $levelText = $getLevelText($level);
                     </svg>
                     <span class="text-sm font-medium text-dark dark:text-light">Certification incluse</span>
                 </div>
-                <button class="inline-flex items-center justify-center font-title font-semibold rounded-md transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-60 disabled:pointer-events-none transform hover:-translate-y-0_5 bg-primary text-dark hover:bg-primary-dark focus:ring-primary-dark shadow-button hover:shadow-button-hover px-5 py-2_5 text-base">
+                <button class="inline-flex items-center justify-center font-title border-0 font-semibold rounded-md transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-60 disabled:pointer-events-none transform hover:-translate-y-1 bg-primary text-dark hover:bg-primary-dark focus:ring-primary-dark shadow-button hover:shadow-button-hover px-5 py-2 text-base">
                     S'inscrire maintenant
                 </button>
             </div>
