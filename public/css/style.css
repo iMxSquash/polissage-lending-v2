@@ -257,15 +257,18 @@ progress {
 ::-webkit-outer-spin-button {
     height: auto
 }
+
 [type=search] {
     -webkit-appearance: textfield;
     appearance: textfield;
     outline-offset: -2px
 }
+
 ::-webkit-search-decoration {
     -webkit-appearance: none;
     appearance: none
 }
+
 ::-webkit-file-upload-button {
     -webkit-appearance: button;
     appearance: button;
@@ -861,6 +864,14 @@ video {
 
 .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr))
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr))
+}
+
+.col-span-full {
+    grid-column: 1 / -1
 }
 
 .flex-col {
@@ -2405,4 +2416,27 @@ strong {
 .dark\:bg-gray-800:is(.dark *) {
     --tw-bg-opacity: 1;
     background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+}
+
+/* Responsive classes for Articles section */
+@media (min-width: 768px) {
+    .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+
+    .md\:text-4xl {
+        font-size: 2.25rem;
+        line-height: 2.5rem
+    }
+}
+
+@media (min-width: 1024px) {
+    .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+    }
+
+    .lg\:px-8 {
+        padding-left: 2rem;
+        padding-right: 2rem
+    }
 }
