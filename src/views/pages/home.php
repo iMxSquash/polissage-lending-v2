@@ -161,8 +161,8 @@
             <section id="avis" class="py-16 bg-light dark:bg-gray-200">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center mb-12">
-                        <h2 class="text-3xl md:text-4xl font-bold font-title text-dark dark:text-light mb-4">Ce que disent nos clients</h2>
-                        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        <h2 class="text-3xl md:text-4xl font-bold font-title text-dark mb-4">Ce que disent nos clients</h2>
+                        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
                             Découvrez les témoignages de nos anciens étudiants.
                         </p>
                     </div>

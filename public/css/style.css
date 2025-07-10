@@ -2230,7 +2230,8 @@ strong {
 
 .dark\:text-dark:is(.dark *) {
     --tw-text-opacity: 1;
-    color: rgb(16 24 32 / var(--tw-text-opacity, 1))
+    color: rgb(16 24 32 / var(--tw-text-opacity, 1)) !important;
+    /* dark color */
 }
 
 .dark\:text-gray-300:is(.dark *) {
@@ -2245,7 +2246,8 @@ strong {
 
 .dark\:text-gray-600:is(.dark *) {
     --tw-text-opacity: 1;
-    color: rgb(75 85 99 / var(--tw-text-opacity, 1))
+    color: rgb(75 85 99 / var(--tw-text-opacity, 1)) !important;
+    /* gray-600 */
 }
 
 .dark\:text-light:is(.dark *) {
@@ -2376,4 +2378,19 @@ strong {
 .dark\:bg-gray-200:is(.dark *) {
     --tw-bg-opacity: 1;
     background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
+}
+
+/* Overrides pour forcer le mode light sur certains textes */
+/* Force les titres avec text-dark à rester sombres même en dark mode */
+.dark .text-dark {
+    --tw-text-opacity: 1;
+    color: rgb(16 24 32 / var(--tw-text-opacity, 1)) !important;
+    /* dark color */
+}
+
+/* Force les textes avec text-gray-600 à rester gris moyen même en dark mode */
+.dark .text-gray-600 {
+    --tw-text-opacity: 1;
+    color: rgb(75 85 99 / var(--tw-text-opacity, 1)) !important;
+    /* gray-600 */
 }
