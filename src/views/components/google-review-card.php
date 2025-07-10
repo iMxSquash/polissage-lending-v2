@@ -4,7 +4,7 @@ $getInitials = function ($name) {
 };
 ?>
 
-<div class="h-full review-card bg-light dark:bg-dark border border-border dark:border-gray-700 shadow-card hover:shadow-card-hover rounded-card transition-all duration-300 hover:-translate-y-1 relative <?php echo $isFeatured ? 'ring-2 ring-primary' : ''; ?>">
+<div class="h-full bg-light dark:bg-dark border border-border dark:border-gray-700 shadow-card hover:shadow-card-hover rounded-card transition-all duration-300 hover:-translate-y-1 relative <?php echo $isFeatured ? 'ring-2 ring-primary' : ''; ?>">
     <?php if ($isFeatured): ?>
         <div class="bg-primary text-dark font-title text-center py-2 text-sm font-semibold">
             ⭐ Avis client recommandé

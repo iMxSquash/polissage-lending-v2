@@ -34,7 +34,7 @@
 
             <!-- CTA Button Desktop + Theme Toggle -->
             <div class="hidden md:flex items-center space-x-4">
-                <button id="themeToggle" class="theme-toggle-btn" aria-label="Changer de thème">
+                <button id="themeToggle" class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors duration-200" aria-label="Changer de thème">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-icon lucide-sun theme-icon sun-icon">
                         <circle cx="12" cy="12" r="4" />
                         <path d="M12 2v2" />
@@ -50,14 +50,14 @@
                         <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
                     </svg>
                 </button>
-                <button class="btn btn-primary cta-button">
+                <button class="bg-primary hover:bg-primary-dark text-dark font-semibold py-2 px-4 rounded-lg transition-all duration-200 hover:-translate-y-0.5 shadow-button">
                     Inscription
                 </button>
             </div>
 
             <!-- Menu Mobile -->
             <div class="md:hidden flex items-center space-x-4">
-                <button id="themeToggleMobile" class="theme-toggle-btn mr-1" aria-label="Changer de thème">
+                <button id="themeToggleMobile" class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors duration-200 mr-1" aria-label="Changer de thème">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-icon lucide-sun theme-icon sun-icon">
                         <circle cx="12" cy="12" r="4" />
                         <path d="M12 2v2" />
@@ -73,8 +73,8 @@
                         <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
                     </svg>
                 </button>
-                <button id="mobileMenuToggle" class="mobile-menu-btn" aria-label="Toggle menu">
-                    <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <button id="mobileMenuToggle" class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors duration-200" aria-label="Toggle menu">
+                    <svg class="w-6 h-6 text-dark dark:text-light" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="4" x2="20" y1="6" y2="6" />
                         <line x1="4" x2="20" y1="12" y2="12" />
                         <line x1="4" x2="20" y1="18" y2="18" />
@@ -103,7 +103,7 @@
                 Contact
             </a>
             <div class="pt-4">
-                <button class="btn btn-primary w-full cta-button-mobile">
+                <button class="bg-primary hover:bg-primary-dark text-dark font-semibold py-2 px-4 rounded-lg transition-all duration-200 hover:-translate-y-0.5 shadow-button w-full">
                     Inscription
                 </button>
             </div>
