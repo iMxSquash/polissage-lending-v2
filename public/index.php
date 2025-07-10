@@ -27,13 +27,5 @@ use App\Utils\Router;
 $router = new Router();
 
 $router->get('/', 'HomeController@index');
-$router->get('/demo', function () {
-    readfile(__DIR__ . '/demo.html');
-});
-$router->get('/api/health', function () {
-    header('Content-Type: application/json');
-    echo json_encode(['status' => 'ok', 'service' => 'php-web']);
-});
-$router->post('/contact', 'ContactController@handleContact');
 
 $router->dispatch();

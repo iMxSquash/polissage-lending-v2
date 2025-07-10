@@ -6,25 +6,10 @@ services:
     buildCommand: |
       composer install --no-dev --optimize-autoloader
       mkdir -p public/images
+      python python/init_data.py
     startCommand: php -S 0.0.0.0:$PORT -t public
     envVars:
       - key: PHP_VERSION
         value: "8.1"
-      - key: PYTHON_API_URL
-        value: https://polissage-python.onrender.com
-    autoDeploy: true
-    previewsEnabled: true
-
-  - type: web
-    name: polissage-python
-    env: python
-    plan: free
-    buildCommand: pip install -r python/requirements.txt
-    startCommand: python python/api.py
-    envVars:
-      - key: PYTHON_VERSION
-        value: "3.9"
-      - key: PORT
-        value: "10000"
     autoDeploy: true
     previewsEnabled: true

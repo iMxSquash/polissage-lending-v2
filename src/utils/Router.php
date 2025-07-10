@@ -58,7 +58,8 @@ class Router
 
     private function handle404()
     {
-        http_response_code(404);
-        echo "<h1>404 - Page Not Found</h1>";
+        // Redirect to home page instead of showing 404
+        header('Location: /', true, 302);
+        exit;
     }
 }

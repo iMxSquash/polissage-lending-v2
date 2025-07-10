@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
 import json
 import os
-from datetime import datetime, timedelta
 
 def create_sample_data():
-    """Create sample data files for development - matching DataService.php structure"""
+    """Create sample data files for development"""
     
     # Sample courses data
     courses = [
