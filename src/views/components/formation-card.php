@@ -9,9 +9,10 @@ $getLevelColor = function ($level) {
             return 'bg-primary bg-opacity-10 text-primary dark:bg-primary dark:bg-opacity-100 dark:text-dark';
         case 'advanced':
         case 'expert':
+        case 'pro':
             return 'bg-accent bg-opacity-10 text-accent dark:bg-accent dark:bg-opacity-100 dark:text-dark';
         default:
-            return 'bg-light text-dark dark:bg-gray-800 dark:text-light';
+            return 'bg-success bg-opacity-10 text-success dark:bg-success dark:bg-opacity-100 dark:text-dark';
     }
 };
 
@@ -20,9 +21,10 @@ $getLevelText = function ($level) {
         case 'beginner':
             return 'Débutant';
         case 'intermediate':
-            return 'Intermédiaire';
+            return 'Avancé';
         case 'advanced':
-            return 'Expert';
+        case 'expert':
+            return 'Pro';
         default:
             return ucfirst($level ?? 'Débutant');
     }
@@ -57,7 +59,7 @@ $levelText = $getLevelText($level);
                 </div>
             <?php endif; ?>
 
-            <div class="absolute <?php echo $isFeatured ? 'top-10' : 'top-3'; ?> right-3">
+            <div class="absolute <?php echo $isFeatured ? 'top-10' : 'top-3'; ?> right-3 z-10">
                 <span class="inline-flex items-center px-2 py-1 text-xs font-medium rounded-full <?php echo $levelColor; ?>">
                     <?php echo $levelText; ?>
                 </span>
@@ -71,7 +73,7 @@ $levelText = $getLevelText($level);
                         <?php echo htmlspecialchars($course['title']); ?>
                     </h3>
                     <div class="text-2xl font-bold text-dark dark:text-primary ml-2">
-                        <?php echo htmlspecialchars($course['price'] ?? 'Gratuit'); ?>
+                        <?php echo htmlspecialchars($course['price'] . ' €' ?? 'Gratuit'); ?>
                     </div>
                 </div>
                 <div class="w-12 h-1 bg-primary rounded mt-2"></div>
